@@ -23,9 +23,9 @@ export default function Home() {
       if (!user) return
 
       let { data, error, status } = await supabase
-        .from('user-mint-url')
+        .from('users')
         .select('url')
-        .eq('username', user.user_metadata.user_name)
+        .eq('username', `@${user.user_metadata.user_name}`)
         .single()
 
 
@@ -59,9 +59,10 @@ export default function Home() {
           </h2>
 
           {url && (
-            <h2 className="mt-3 text-lg">
-              Your minting site is <a className="text-sky-500" href={url} target="_blank">{url}</a>
-            </h2>
+            <p className="mt-3 text-2xl text-center">
+              Your minting site is<br />
+              <a className="text-green-500" href={url} target="_blank">{url}</a>
+            </p>
           )}
 
           <button

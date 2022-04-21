@@ -60,8 +60,7 @@ export default function Home() {
 
           {url && (
             <p className="mt-3 text-2xl text-center">
-              Your minting site is<br />
-              <a className="text-green-500" href={url} target="_blank">{url}</a>
+              参加賞NFTミントサイトは<a className="text-green-500" href={url} target="_blank">こちら</a>
             </p>
           )}
 

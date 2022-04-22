@@ -70,7 +70,7 @@ export default function Home() {
 
             {url && (
               <p className="mt-3 text-lg text-center px-5">
-                参加賞NFTミントサイトは<a className="ml-5 bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 px-4 py-2 mt-3 text-white bg-[#FFA500] rounded-lg" href={url} target="_blank">こちら</a>
+                Click <a className="bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 px-4 py-2 mt-3 text-white bg-[#FFA500] rounded-lg" href={url} target="_blank">here</a> to get the Finisher NFT!
               </p>
             )}
             <div className="text-center py-10">
@@ -85,7 +85,7 @@ export default function Home() {
       ) : (
         <div>
           <p className="mt-3 text-lg text-center px-5">
-            参加賞NFTを受け取るには、大会エントリー時に使用したTwitterにてログインをしてください。
+            Log in with Twitter ID which you used for the entry form, and get your Finisher NFT!
           </p>
           <div className="text-center py-10">
             <button

@@ -42,60 +42,47 @@ export default function Home() {
   }
 
   return (
-    <div className="justify-center items-center bg-gradient-to-r from-yellow-400 via-green-500 to-blue-500 h-screen">
-        <div className="text-center py-10 px-5 self-center">
+    <div className="h-screen bg-gradient-to-r from-yellow-400 via-green-500 to-blue-500 text-center">
+        <div className="text-center py-10 px-5 self-center w-3/5 m-auto">
           <Image
             width={1143}
             height={133}
-            resizeMode="contain"
             src="/images/logo.png"
             className="self-center"
           />
           <Image
             width={981}
             height={509}
-            resizeMode="contain"
             src="/images/stats.png"
             className="self-center"
           />
         </div>
-        <div className="text-center py-10 px-5 object-center self-center">
-        </div>
         {session ? (
-        <>
-        <div>
-          <div className="text-center">
-          <Image
-            width={100}
-            height={100}
-            src={session?.user?.user_metadata?.picture}
-            className="rounded-full self-center"
-          />
-          </div>
-          <p className="mt-3 text-lg text-center">
-            Welcome {session?.user?.user_metadata?.full_name}
-          </p>
-          <p className="mt-3 text-lg text-center">
-            You are signed in as @{session?.user?.user_metadata?.user_name}
-          </p>
+          <div>
+            <Image
+              width={100}
+              height={100}
+              src={session?.user?.user_metadata?.picture}
+              className="rounded-full self-center"
+            />
+            <p className="mt-3 text-lg">Welcome {session?.user?.user_metadata?.full_name}</p>
+            <p className="mt-3 text-lg">You are signed in as @{session?.user?.user_metadata?.user_name}</p>
 
-          {url && (
-            <p className="mt-3 text-lg text-center px-5">
-              参加賞NFTミントサイトは<a className="bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 px-4 py-2 mt-3 text-white bg-[#FFA500] rounded-lg" href={url} target="_blank">こちら</a>
-            </p>
-          )}
-          <div className="text-center py-10">
-          <button
-            className="px-4 py-2 mt-3 text-black bg-[#1589FF] hover:bg-[#2554C7] hover:text-white rounded-lg"
-            onClick={() => supabase.auth.signOut()}
-          >
-            Sign out
-          </button>
+            {url && (
+              <p className="mt-3 text-lg text-center px-5">
+                参加賞NFTミントサイトは<a className="ml-5 bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 px-4 py-2 mt-3 text-white bg-[#FFA500] rounded-lg" href={url} target="_blank">こちら</a>
+              </p>
+            )}
+            <div className="text-center py-10">
+              <button
+                className="px-4 py-2 mt-3 text-black bg-rose-600 hover:bg-[#2554C7] hover:text-white rounded-lg"
+                onClick={() => supabase.auth.signOut()}
+              >
+                Sign out
+              </button>
+            </div>
           </div>
-        </div>
-        </>
       ) : (
-        <>
         <div>
           <p className="mt-3 text-lg text-center px-5">
             参加賞NFTを受け取るには、大会エントリー時に使用したTwitterにてログインをしてください。
@@ -109,7 +96,6 @@ export default function Home() {
            </button>
           </div>
         </div>
-        </>
       )}
     </div>
   );
